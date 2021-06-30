@@ -30,6 +30,9 @@ items:
     labels:
       app: {{ postgresql_application_name }}
   spec:
+{% if postgresql_storage_class %}
+    storageClassName: {{ postgresql_storage_class }}
+{% endif %}
     accessModes:
     - ReadWriteOnce
     resources:

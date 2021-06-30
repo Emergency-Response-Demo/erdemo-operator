@@ -12,3 +12,6 @@ spec:
   externalAccess:
     enabled: False
   profile: RHSSO
+{% if keycloak_storage_class %}
+  storageClassName: {{ keycloak_storage_class }}
+{% endif %}
