@@ -93,6 +93,9 @@ items:
   spec:
     accessModes:
     - ReadWriteOnce
+{% if postgresql_storage_class %}
+    storageClassName: {{ postgresql_storage_class }}
+{% endif %}
     resources:
       requests:
         storage: 1Gi
